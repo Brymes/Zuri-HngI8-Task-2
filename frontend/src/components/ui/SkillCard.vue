@@ -20,7 +20,7 @@
             p-2
           "
         >
-          <font-awesome-icon :icon="skillIcon" />
+          <img :src="skill.skillIcon" />
         </div>
         <div class="flex-grow">
           <h2 class="text-xl title-font font-medium mb-3">{{ skill.title }}</h2>
