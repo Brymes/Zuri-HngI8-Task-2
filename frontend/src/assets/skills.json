@@ -1,0 +1,27 @@
+[
+    {
+        "title":"Python",
+        "description":"I have enough experience using Django and Flask. I plan on looking into Data Science, Machine Learning and Artificial Intelligence with Python. I also use Kivy. ",
+        "skillIcon":"../../assets/python.svg"
+    },
+    {
+        "title":"JavaScript",
+        "description":"This site was built with VueJS. I also use ExpressJS for Backend Development",
+        "skillIcon":"../../assets/js.svg"
+    },
+    {
+        "title":"Flutter(Dart)",
+        "description":"On a Scale of 1-10 my proficiency in Flutter is about 5. I plan on getting enough practice with flutter through HNG Internship 8(by Zuri)",
+        "skillIcon":"../../assets/flutter.svg"
+    },
+    {
+        "title":"GoLang",
+        "description":"I just got into GoLang recently. Keep an Eye out for projects on it soon.",
+        "skillIcon":"../../assets/golang.svg"
+    },
+    {
+        "title":"GraphQL",
+        "description":"I love the GraphQL spec. Personally it improves and speeds up the development process. And it is very practical for production Scenarios",
+        "skillIcon":"../../assets/graphql.svg"
+    }
+]
