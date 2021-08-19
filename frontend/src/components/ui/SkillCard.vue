@@ -1,9 +1,8 @@
 <template>
   <!-- <div class="container bg-gray-900 shadow-lg rounded-xl p-6"> -->
-  <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
-    <div class="p-10 md:w-1/3 md:mb-0 mb-6 flex flex-col">
+    <div class="p-10 w-max h-max ">
       <div
-        class="rounded bg-gray-800 p-4 transform translate-x-6 -translate-y-6"
+        class="rounded bg-gray-700 p-4"
       >
         <div
           class="
@@ -30,7 +29,6 @@
         </div>
       </div>
     </div>
-  </div>
 </template>
 
 <script>

@@ -3,10 +3,11 @@
     class="
       flex-auto
       w-full
-      max-w-sm
-      grid grid-cols-2
-      gap-6
-      md:grid-cols-1 md:px-8
+      grid 
+      lg:grid-cols-5
+      md:grid-cols-auto
+      sm:grid-cols-auto
+      gap-16
     "
   >
     <div v-for="skill in skills" :key="skill.title">
@@ -16,8 +17,8 @@
 </template>
 
 <script>
-import SkillCard from "./ui/SkillCard";
-import skillsJson from "../assets/skills";
+import SkillCard from "./ui/SkillCard.vue";
+import skillsJson from "../assets/skills.json";
 export default {
   name: "Skills",
   components: {
