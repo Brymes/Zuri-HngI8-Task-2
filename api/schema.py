@@ -1,10 +1,7 @@
 from typing import Optional
 
 import graphene
-from graphene_sqlalchemy import (
-    SQLAlchemyConnectionField,
-    SQLAlchemyObjectType
-)
+from graphene_sqlalchemy import SQLAlchemyObjectType
 
 from api.models import Messages
 

@@ -1,26 +1,33 @@
 from flask import Flask
-from flask_restful import Api
+from flask_graphql import GraphQLView
 
+from commands import create_tables
 from config import Config
 from extensions import db
-from api.routes import initialize_routes
 
+
+from api.schema import schema
 
 def register_extensions(app):
     db.init_app(app)
-
-
-def register_resources(app):
-    api = Api(app)
-    initialize_routes(api)
 
 
 def create_app():
     app = Flask(__name__)
     app.config.from_object(Config)
 
+    app.cli.add_command(create_tables)
+
     register_extensions(app)
-    register_resources(app)
+
+    app.add_url_rule(
+    '/graphql',
+    view_func=GraphQLView.as_view(
+        'graphq',
+        schema=schema,
+        graphiql=False
+    )
+)
 
     return app
 
