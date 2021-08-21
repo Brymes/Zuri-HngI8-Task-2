@@ -38,7 +38,7 @@
           "
           type="text"
           placeholder=""
-        />
+        >
       </div>
       <div class="mt-8">
         <span class="uppercase text-sm text-blue-400 font-bold">Email</span>
@@ -53,7 +53,7 @@
             focus:outline-none focus:shadow-outline
           "
           type="text"
-        />
+        >
       </div>
       <div class="mt-8">
         <span class="uppercase text-sm text-blue-400 font-bold">Message</span>
@@ -68,7 +68,7 @@
             rounded-lg
             focus:outline-none focus:shadow-outline
           "
-        ></textarea>
+        />
       </div>
       <div class="mt-8">
         <button
