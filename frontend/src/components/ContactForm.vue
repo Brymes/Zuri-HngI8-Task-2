@@ -23,10 +23,10 @@
         </h2>
       </div>
     </div>
-    <div class="">
+    <Form class="">
       <div>
         <span class="uppercase text-sm text-blue-400 font-bold">Full Name</span>
-        <input
+        <Field
           class="
             w-full
             bg-gray-300
@@ -36,13 +36,18 @@
             rounded-lg
             focus:outline-none focus:shadow-outline
           "
+          name="fullName"
           type="text"
-          placeholder=""
-        >
+          placeholder="John Doe"
+        />
+        <ErrorMessage
+          name="fullName"
+          class="error-feedback"
+        />
       </div>
       <div class="mt-8">
         <span class="uppercase text-sm text-blue-400 font-bold">Email</span>
-        <input
+        <Field
           class="
             w-full
             bg-gray-300
@@ -52,12 +57,18 @@
             rounded-lg
             focus:outline-none focus:shadow-outline
           "
+          name="email"
           type="text"
-        >
+          placeholder="johndoe@gmail.com"
+        />
+        <ErrorMessage
+          name="email"
+          class="error-feedback"
+        />
       </div>
       <div class="mt-8">
         <span class="uppercase text-sm text-blue-400 font-bold">Message</span>
-        <textarea
+        <Field
           class="
             w-full
             h-32
@@ -68,6 +79,12 @@
             rounded-lg
             focus:outline-none focus:shadow-outline
           "
+          name="messages"
+          type="text"
+        />
+        <ErrorMessage
+          name="messages"
+          class="error-feedback"
         />
       </div>
       <div class="mt-8">
@@ -88,19 +105,55 @@
           Send Message
         </button>
       </div>
-    </div>
+    </Form>
   </div>
 </template>
 
 <script>
+import { Form, Field, ErrorMessage } from "vee-validate";
+import * as yup from "yup";
+
 const ContactForm = {
   name: "ContactForm",
-  /* methods: {
-    handleHome() {
-      this.$router.push("/courses");
-    },
-  } */
+
+  components: {
+    Form,
+    Field,
+    ErrorMessage,
+  },
+
+    data() {
+    const schema = yup.object().shape({
+      email: yup
+        .string()
+        .required("Email is required!")
+        .email("Email is invalid!")
+        .max(80, "Must be maximum 80 characters!"),
+      fullName: yup
+        .string()
+        .required("First Name is required!")
+        .min(4, "Must be at least 4 characters!")
+        .max(50, "Must be maximum 50 characters!"),
+      message: yup
+        .string()
+        .required("Password is required!")
+        .min(10, "Must be at least 6 characters!")
+    });
+
+    return {
+      successful: false,
+      loading: false,
+      message: null,
+      schema,
+    };
+  },
 };
 
 export default ContactForm;
 </script>
+
+<style>
+.error-feedback {
+  color: red;
+}
+</style>
