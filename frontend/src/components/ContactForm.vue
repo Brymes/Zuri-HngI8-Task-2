@@ -117,7 +117,7 @@ import { Form, Field, ErrorMessage } from "vee-validate";
 import * as yup from "yup";
 
 import axios from "axios";
-const API_URL = "";
+const API_URL = "https://brymeshngtask2.herokuapp.com/graphql";
 
 const ContactForm = {
   name: "ContactForm",
