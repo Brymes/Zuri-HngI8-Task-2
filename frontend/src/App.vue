@@ -18,7 +18,7 @@
               I am a gentle, intuitive, self motivated person and I enjoy solving problems
             </p>
             
-            <a  class="text-yellow-500 text-xl font-bold mt-8"> Email: dev.brymes@gmail.com</a>
+            <a class="text-yellow-500 text-xl font-bold mt-8"> Email: dev.brymes@gmail.com</a>
           </div>
         </div>
         <div class="h-1/3 lg:self-center lg:mb-12 md:mt-8">

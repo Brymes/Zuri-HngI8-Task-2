@@ -23,8 +23,11 @@
         </h2>
       </div>
     </div>
-    <Form class="">
-      <div>
+    <Form
+      :validation-schema="schema"
+      @submit="submitForm"
+    >
+      <div class="form-group">
         <span class="uppercase text-sm text-blue-400 font-bold">Full Name</span>
         <Field
           class="
@@ -137,7 +140,7 @@ const ContactForm = {
         .required("First Name is required!")
         .min(4, "Must be at least 4 characters!")
         .max(50, "Must be maximum 50 characters!"),
-      message: yup
+      messages: yup
         .string()
         .required("Password is required!")
         .min(10, "Must be at least 6 characters!")
@@ -151,7 +154,7 @@ const ContactForm = {
     };
   },
 
-  async Submit(msgData) {
+  async submitForm(msgData) {
     var data = JSON.stringify({
   query: `mutation{
     sendMessage(fullName:"${msgData.fullName}", message:"${msgData.message}", email:"${msgData.email}"){
@@ -176,6 +179,7 @@ var config = {
 axios(config)
 .then(function (response) {
   console.log(JSON.stringify(response.data));
+  this.successful = true
 })
 .catch(function (error) {
   console.log(error);
