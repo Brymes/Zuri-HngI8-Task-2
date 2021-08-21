@@ -9,6 +9,7 @@
     "format": "prettier .  --write"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "vee-validate": "^4.4.2",
     "vue": "^3.0.5",
     "yup": "^0.32.9"

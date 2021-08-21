@@ -113,6 +113,9 @@
 import { Form, Field, ErrorMessage } from "vee-validate";
 import * as yup from "yup";
 
+import axios from "axios";
+const API_URL = "";
+
 const ContactForm = {
   name: "ContactForm",
 
@@ -147,6 +150,38 @@ const ContactForm = {
       schema,
     };
   },
+
+  async Submit(msgData) {
+    var data = JSON.stringify({
+  query: `mutation{
+    sendMessage(fullName:"${msgData.fullName}", message:"${msgData.message}", email:"${msgData.email}"){
+        status,
+        msg {
+            fullName
+        }
+    }
+}`,
+  variables: {}
+});
+
+var config = {
+  method: 'post',
+  url: API_URL,
+  headers: { 
+    'Content-Type': 'application/json'
+  },
+  data : data
+};
+
+axios(config)
+.then(function (response) {
+  console.log(JSON.stringify(response.data));
+})
+.catch(function (error) {
+  console.log(error);
+});
+
+  }
 };
 
 export default ContactForm;
