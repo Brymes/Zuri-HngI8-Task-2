@@ -1,17 +1,23 @@
 <template>
   <div
     class="
-      flex-auto
+      h-full
       w-full
+      flex-auto
       grid 
       lg:grid-cols-5
       md:grid-cols-auto
       sm:grid-cols-auto
-      gap-16
+      gap-10
     "
   >
-    <div v-for="skill in skills" :key="skill.title">
-      <SkillCard :skill="skill" :skillIcon="skill.skillIcon" />
+    <div
+      v-for="skill in skills"
+      :key="skill.title"
+    >
+      <SkillCard
+        :skill="skill"
+      />
     </div>
   </div>
 </template>

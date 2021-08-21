@@ -1,45 +1,44 @@
 <template>
   <!-- <div class="container bg-gray-900 shadow-lg rounded-xl p-6"> -->
-    <div class="p-10 w-max h-max ">
-      <div
-        class="rounded bg-gray-700 p-4"
-      >
-        <div
-          class="
-            w-10
+  <div
+    class="h-full w-full rounded bg-purple-900 p-8"
+  >
+    <Icons
+      class="
+            w-16
             h-10
             inline-flex
             items-center
             justify-center
             rounded-full
-            bg-green-100
-            text-green-500
-            mb-5
+            mb-2
             flex-shrink-0
             p-2
           "
-        >
-          <img :src="skill.skillIcon" />
-        </div>
-        <div class="flex-grow">
-          <h2 class="text-xl title-font font-medium mb-3">{{ skill.title }}</h2>
-          <p class="leading-relaxed text-sm text-justify">
-            {{ skill.description }}
-          </p>
-        </div>
-      </div>
+      :name="skill.skillIcon"
+    />
+    <div class="object-fill">
+      <h2 class="text-xl title-font font-bold mb-3">
+        {{ skill.title }}
+      </h2>
+      <p class="leading-relaxed text-md text-justify">
+        {{ skill.description }}
+      </p>
     </div>
+  </div>
 </template>
 
 <script>
+import Icons from "./Icons.vue"
+
 export default {
   name: "SkillCard",
 
+  components:{
+    Icons //the name of the component you imported
+  },
+
   props: {
-    icon: {
-      required: true,
-      type: String,
-    },
     skill: {
       required: true,
       type: Object,

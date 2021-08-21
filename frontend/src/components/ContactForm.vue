@@ -19,7 +19,7 @@
     <div class="items-center flex flex-col justify-between">
       <div>
         <h2 class="text-4xl lg:text-6xl font-bold leading-tight">
-          Let's Talk... Send me a message
+          Let's Connect... Send me a message
         </h2>
       </div>
     </div>
